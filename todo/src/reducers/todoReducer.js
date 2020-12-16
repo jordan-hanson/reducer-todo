@@ -3,13 +3,13 @@ import { SET_TASK, ADD_TASK_TO_MEMORY, DELETE_TASK_FROM_MEMORY, CLEAR_TASK_INPUT
 const reducer = (state, action) => {
     switch (action.type) {
         case SET_TASK:
-            return ({ ...state, name: action.payload })
+            return ({ ...state, task: action.payload })
         case ADD_TASK_TO_MEMORY:
-            return ({ ...state, memory: state.name })
+            return ({ ...state, memory: state.task })
         case DELETE_TASK_FROM_MEMORY:
-            return ({ ...state, memory: state.name - action.payload })
+            return ({ ...state, memory: state.task - action.payload })
         case CLEAR_TASK_INPUT:
-            return ({ ...state, name: state })
+            return ({ ...state, task: state })
         default:
             return state;
     }
