@@ -1,6 +1,11 @@
 import { SET_TASK, ADD_TASK_TO_MEMORY, DELETE_TASK_FROM_MEMORY, CLEAR_TASK_INPUT } from '../actions/todoActions'
 
-const reducer = (state, action) => {
+export const initialState = {
+    task: "Example 1",
+    memory: []
+}
+
+export const reducer = (state, action) => {
     switch (action.type) {
         case SET_TASK:
             return ({ ...state, task: action.payload })
@@ -14,4 +19,4 @@ const reducer = (state, action) => {
             return state;
     }
 }
-export default reducer
+// export default reducer
